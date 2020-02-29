@@ -5,6 +5,7 @@ import Vuex from 'vuex'
 import router from './router'
 import store from './store'
 import 'normalize.css'
+import './styles/index.scss'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
