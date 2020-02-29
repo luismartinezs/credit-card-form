@@ -9,10 +9,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/colors.scss';
+
 .btn {
   font-size: 1.5rem;
   font-weight: bold;
-  background-color: hsl(203, 77%, 49%);
+  background-color: $primary-500;
   border: none;
   border-radius: 8px;
   padding: 1rem 1.3rem;

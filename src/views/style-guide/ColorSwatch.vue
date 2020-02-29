@@ -15,13 +15,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$size: 40px;
+$size: 50px;
 .color-swatch {
-  border-radius: 5px;
+  border-radius: 10px;
   width: $size;
   height: $size;
-  margin: 5px;
+  margin: 6px;
   display: inline-block;
-  box-shadow: inset 0 0 2px 2px hsla(0, 0%, 0%, 0.1);
+  box-shadow: inset 0 0 3px 2px hsla(0, 0%, 0%, 0.1);
 }
 </style>
