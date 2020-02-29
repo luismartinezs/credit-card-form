@@ -1,3 +1,1 @@
-Serve locally:
-
-`npm run serve`
+An attempt to copy this [Credit Card Form](https://codepen.io/JavaScriptJunkie/full/YzzNGeR) project without looking at the code or dev tools.
