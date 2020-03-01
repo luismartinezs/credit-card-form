@@ -6,9 +6,11 @@
         class="w-100 fs-3 p-1 mb-3d2"
         id="CVV"
         name="credit-card-form"
+        inputmode="numeric"
+        v-mask="cvvMask"
         type="number"
-        maxlength="4"
         required
+        v-model="cvv"
       />
     </div>
   </label>
@@ -16,6 +18,12 @@
 
 <script>
 export default {
-  name: 'CvvInput'
+  name: 'CvvInput',
+  data () {
+    return {
+      cvvMask: '####',
+      cvv: ''
+    }
+  }
 }
 </script>

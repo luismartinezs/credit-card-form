@@ -7,7 +7,7 @@
       <expiration-date-input class="mr-2" />
       <cvv-input />
     </div>
-    <button class="btn btn-primary btn-light fs-6 w-100 py-1 shadow-200 z-200">Submit</button>
+    <button @click.prevent="" class="btn btn-primary btn-light fs-6 w-100 py-1 shadow-200 z-200">Submit</button>
   </form>
 </template>
 

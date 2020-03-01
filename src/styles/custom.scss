@@ -1,37 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web|Source+Code+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web|Source+Code+Pro&display=swap");
 
 body {
-  font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
   background-color: rgb(245, 245, 245);
 }
 
 .card {
-  font-family: 'Source Code Pro', 'Courier New', Courier, monospace;
+  font-family: "Source Code Pro", "Courier New", Courier, monospace;
 }
 
 form {
   label {
     font-weight: 600;
-    color: $grey-600;
+    color: $grey-700;
   }
   input {
-  background-color: inherit;
-  font-weight: 500;
-  color: $grey-900;
-  border-radius: 5px;
-  border-color: $grey-500;
-  border-width: 1px;
-  border-style: solid;
-  transition: all 0.5s;
+    background-color: inherit;
+    font-weight: 600;
+    color: $grey-900;
+    border-radius: 5px;
+    border-color: $grey-500;
+    border-width: 1px;
+    border-style: solid;
+    transition: all 0.5s;
+    &:focus,
+    &:hover {
+      border-color: $primary-600;
+    }
+    &:focus {
+      @extend .shadow-300;
+    }
+  }
+}
+
+button, input {
   &:focus,
   &:hover {
-    border-color: $primary-600;
     outline: none;
   }
-  &:focus {
-    @extend .shadow-300;
-  }
-}}
+}
 
 .btn {
   font-weight: 500;

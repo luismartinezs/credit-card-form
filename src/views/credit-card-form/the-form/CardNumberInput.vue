@@ -6,8 +6,11 @@
         class="form-input__input w-100 fs-3 p-1 mb-3d2"
         id="cardNumber"
         name="credit-card-form"
-        type="number"
+        inputmode="numeric"
+        v-mask="cardNumberMask"
+        title="Only numeric values allowed."
         required
+        v-model="cardNumber"
       />
     </div>
   </label>
@@ -15,6 +18,12 @@
 
 <script>
 export default {
-  name: 'CardNumberInput'
+  name: 'CardNumberInput',
+  data () {
+    return {
+      cardNumberMask: '#### #### #### ####',
+      cardNumber: ''
+    }
+  }
 }
 </script>

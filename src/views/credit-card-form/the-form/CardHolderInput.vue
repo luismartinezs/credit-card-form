@@ -8,6 +8,7 @@
         name="credit-card-form"
         type="text"
         required
+        v-model="cardHolder"
       />
     </div>
   </label>
@@ -15,6 +16,11 @@
 
 <script>
 export default {
-  name: 'CardHolderInput'
+  name: 'CardHolderInput',
+  data () {
+    return {
+      cardHolder: ''
+    }
+  }
 }
 </script>

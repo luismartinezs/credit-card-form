@@ -6,9 +6,12 @@ Tasks:
 - [x] Define margin and padding classes
 - [x] Define width and height classes
 - [x] Define shadow class presets
-- [ ] Define fonts
-- [ ] Do not show arrows in numeric inputs (custom validation with JS)
-- [ ] Add values to card
+- [x] Define fonts
+- [x] Do not show arrows in numeric inputs (custom validation with JS)
+- [x] Add values to card
+- [ ] Do not allow manual input in expiration date
 - [ ] Put input values in store
 - [ ] Show actual values in card
 - [ ] Card flip animation
+- [ ] Use different backgrounds just for fun every time app reloads
+- [ ] Change card logo depending on card number

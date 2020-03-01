@@ -15,6 +15,7 @@
           v-model="selectedMonth"
           placeholder="Month"
           required
+          readonly
         />
         <font-awesome-icon icon="angle-down" class="down-caret" />
         <div v-show="showMonthDropdown" class="dropdown w-8 shadow-400 z-700">
@@ -45,6 +46,7 @@
           v-model="selectedYear"
           placeholder="Year"
           required
+          readonly
         />
         <font-awesome-icon icon="angle-down" class="down-caret" />
         <div v-show="showYearDropdown" class="dropdown w-8 shadow-400 z-700">
