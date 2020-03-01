@@ -19,3 +19,19 @@ form input {
     @extend .shadow-300;
   }
 }
+
+.btn {
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background-color: $grey-500;
+  &-light {
+    color: $grey-100;
+  }
+  &-dark {
+    color: $grey-900;
+  }
+  &-primary {
+    background-color: $primary-500;
+  }
+}

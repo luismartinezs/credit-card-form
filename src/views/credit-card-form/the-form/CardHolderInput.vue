@@ -7,6 +7,7 @@
         id="cardHolder"
         name="credit-card-form"
         type="text"
+        required
       />
     </div>
   </label>

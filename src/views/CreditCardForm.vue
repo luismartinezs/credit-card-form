@@ -21,6 +21,6 @@ export default {
 @import '@/styles/colors.scss';
 
 .credit-card-form {
-  background-color: $primary-100;
+  background-color: $primary-200;
 }
 </style>

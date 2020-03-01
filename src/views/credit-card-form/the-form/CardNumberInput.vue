@@ -6,7 +6,8 @@
         class="form-input__input w-100 fs-3 p-1 mb-3d2"
         id="cardNumber"
         name="credit-card-form"
-        type="text"
+        type="number"
+        required
       />
     </div>
   </label>

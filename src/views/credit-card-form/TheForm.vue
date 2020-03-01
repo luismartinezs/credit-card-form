@@ -3,10 +3,11 @@
     <credit-card />
     <card-number-input />
     <card-holder-input />
-    <div class="d-flex">
+    <div class="d-flex mb-1">
       <expiration-date-input class="mr-2" />
       <ccv-input />
     </div>
+    <button class="btn btn-primary btn-light fs-5 w-100 py-1 shadow-200 z-200">Submit</button>
   </form>
 </template>
 
