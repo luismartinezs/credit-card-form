@@ -9,9 +9,11 @@ Tasks:
 - [x] Define fonts
 - [x] Do not show arrows in numeric inputs (custom validation with JS)
 - [x] Add values to card
-- [ ] Do not allow manual input in expiration date
+- [x] Do not allow manual input in expiration date
+- [ ] Card flip animation
 - [ ] Put input values in store
 - [ ] Show actual values in card
-- [ ] Card flip animation
 - [ ] Use different backgrounds just for fun every time app reloads
-- [ ] Change card logo depending on card number
+- [ ] Change card logo depending on card number in real time
+- [ ] Highlight different areas of the card depending on currently selected input
+- [ ] Clicking in different areas of the card brings focus to inputs
