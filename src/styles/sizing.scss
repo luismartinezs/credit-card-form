@@ -1,0 +1,22 @@
+// Hand made sizes for font
+// 12 14 16 18 20 24 30 36 48 60 72 (px)
+
+$sizes: (
+  1: 12,
+  2: 14,
+  3: 16,
+  4: 18,
+  5: 20,
+  6: 24,
+  7: 30,
+  8: 36,
+  9: 48,
+  10: 60,
+  11: 72
+);
+
+@each $index, $size in $sizes {
+  .fs-#{$index} {
+    font-size: #{$size}px;
+  }
+}

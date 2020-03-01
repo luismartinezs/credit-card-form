@@ -1,7 +1,7 @@
 <template>
   <div class="alert">
-    <h2 class="alert__heading">Our privacy policy has changed</h2>
-    <p class="alert__text">Make sure you know how these changes affect you.</p>
+    <h2 class="alert__heading fs-6">Our privacy policy has changed</h2>
+    <p class="alert__text fs-4">Make sure you know how these changes affect you.</p>
   </div>
 </template>
 
@@ -25,10 +25,6 @@ export default {
   .alert__heading {
     margin-bottom: 0.8rem;
     font-weight: 500;
-    font-size: 1.4rem;
-  }
-  .alert__text {
-    font-size: 1.2rem;
   }
 }
 </style>

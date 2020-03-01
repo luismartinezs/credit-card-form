@@ -1,5 +1,5 @@
 <template>
-  <button class="btn">CLICK ME</button>
+  <button class="btn fs-6">CLICK ME</button>
 </template>
 
 <script>
@@ -9,21 +9,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '@/styles/colors.scss';
+@import "@/styles/colors.scss";
 
 .btn {
-  font-size: 1.5rem;
   font-weight: bold;
-  background-color: $primary-500;
   border: none;
   border-radius: 8px;
   padding: 1rem 1.3rem;
   margin: 1rem 1.3rem;
+  background-color: $grey-500;
   &-light {
-    color: hsl(0, 0%, 96%);
+    color: $grey-100;
   }
   &-dark {
-    color: rgb(26, 26, 26);
+    color: $grey-900;
+  }
+  &-primary {
+    background-color: $primary-500;
   }
 }
 </style>

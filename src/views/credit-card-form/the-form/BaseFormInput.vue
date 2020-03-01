@@ -1,9 +1,9 @@
 <template>
   <label class="form-input" for="cardNumber">
-    <div class="form-input__title">Card Number</div>
+    <div class="form-input__title fs-2">Card Number</div>
     <div>
       <input
-        class="form-input__input full-width"
+        class="form-input__input full-width fs-3"
         id="cardNumber"
         name="credit-card-form"
         type="text"
@@ -23,10 +23,8 @@ export default {
 
 .form-input__title {
   margin-bottom: 5px;
-  font-size: 0.9rem;
 }
 .form-input__input {
-  font-size: 1.1rem;
   background-color: inherit;
   padding: 16px;
   color: $grey-900;
