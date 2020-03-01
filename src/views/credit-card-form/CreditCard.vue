@@ -1,5 +1,5 @@
 <template>
-  <div class="card-item mx-auto"></div>
+  <div class="card-item mx-auto z-500 shadow-500"></div>
 </template>
 
 <script>
@@ -11,7 +11,6 @@ export default {
 <style lang="scss" scoped>
 .card-item {
   position: relative;
-  z-index: 100;
   width: 420px;
   height: 270px;
   border-radius: 20px;

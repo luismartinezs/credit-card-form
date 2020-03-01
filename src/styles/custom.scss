@@ -16,6 +16,6 @@ form input {
     outline: none;
   }
   &:focus {
-    box-shadow: 3px 10px 20px 0 hsla(0, 0%, 0%, 0.1);
+    @extend .shadow-300;
   }
 }

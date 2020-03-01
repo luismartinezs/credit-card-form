@@ -1,5 +1,5 @@
 <template>
-  <form class="the-form mw-40 mt-3d2 mx-auto pt-12 pb-3d2 px-2">
+  <form class="the-form mw-40 mt-3d2 mx-auto pt-12 pb-3d2 px-2 z-400 shadow-400">
     <card-number-input />
     <card-holder-input />
   </form>
@@ -28,6 +28,5 @@ export default {
   color: $grey-700;
   text-align: left;
   border-radius: 8px;
-  box-shadow: 5px 10px 20px 5px hsla(0, 0%, 0%, 0.1);
 }
 </style>
