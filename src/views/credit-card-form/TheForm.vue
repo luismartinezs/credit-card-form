@@ -1,17 +1,19 @@
 <template>
-  <form class="the-form mw-40 mt-3d2 mx-auto py-3d2 px-2">
-    <base-form-input />
-    <base-form-input />
+  <form class="the-form mw-40 mt-3d2 mx-auto pt-12 pb-3d2 px-2">
+    <card-number-input />
+    <card-holder-input />
   </form>
 </template>
 
 <script>
-import BaseFormInput from './the-form/BaseFormInput.vue'
+import CardNumberInput from './the-form/CardNumberInput.vue'
+import CardHolderInput from './the-form/CardHolderInput'
 
 export default {
   name: 'TheForm',
   components: {
-    BaseFormInput
+    CardNumberInput,
+    CardHolderInput
   }
 }
 </script>
@@ -20,6 +22,8 @@ export default {
 @import "@/styles/colors.scss";
 
 .the-form {
+  position: relative;
+  bottom: calc(16px*10);
   background-color: $grey-100;
   color: $grey-700;
   text-align: left;

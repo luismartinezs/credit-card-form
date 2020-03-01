@@ -6,3 +6,4 @@ Tasks:
 - [x] Define margin and padding classes
 - [ ] Define width and height classes
 - [ ] Define shadow class presets
+- [ ] Define fonts

@@ -28,7 +28,7 @@
         />
       </div>
     </div>
-    <div class="headings">
+    <div class="headings mb-1">
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
 
@@ -36,6 +36,14 @@
       <h4>Heading 4</h4>
       <h5>Heading 5</h5>
       <h6>Heading 6</h6>
+    </div>
+    <div class="elevation">
+      <h2 class="mb-3d4">Shadows and z-index</h2>
+      <div class="empty-block block-1 mr-2 mb-2 w-8 h-8 z-100 shadow-100"><span class="mt-1d2 ml-1d2">100</span></div>
+      <div class="empty-block block-2 mr-2 mb-2 w-8 h-8 z-200 shadow-200"><span class="mt-1d2 ml-1d2">200</span></div>
+      <div class="empty-block block-3 mr-2 mb-2 w-8 h-8 z-300 shadow-300"><span class="mt-1d2 ml-1d2">300</span></div>
+      <div class="empty-block block-4 mr-2 mb-2 w-8 h-8 z-400 shadow-400"><span class="mt-1d2 ml-1d2">400</span></div>
+      <div class="empty-block block-5 mr-2 mb-2 w-8 h-8 z-500 shadow-500"><span class="mt-1d2 ml-1d2">500</span></div>
     </div>
   </div>
 </template>
@@ -80,7 +88,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/styles/variables.scss';
+
 .style-guide {
   text-align: left;
+  .elevation {
+    height: 350px;
+  .empty-block {
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    span {
+      position: absolute;
+      color: $grey-500;
+    }
+  }
+  .block- {
+    &2 {
+      top: 30px;
+      right: 60px;
+    }
+    &3 {
+      top: 60px;
+      right: 120px;
+    }
+    &4 {
+      top: 90px;
+      right: 180px;
+    }
+    &5 {
+      top: 120px;
+      right: 240px;
+    }
+  }
+  }
 }
 </style>

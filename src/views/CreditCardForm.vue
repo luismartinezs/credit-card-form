@@ -1,7 +1,7 @@
 Clone this project https://codepen.io/JavaScriptJunkie/full/YzzNGeR
 
 <template>
-    <div class="credit-card-form">
+    <div class="credit-card-form px-1 pt-4 w-100 h-100">
       <credit-card />
       <the-form />
     </div>
@@ -23,8 +23,6 @@ export default {
 @import '@/styles/colors.scss';
 
 .credit-card-form {
-  width: 100%;
-  height: 100%;
   background-color: $primary-100;
 }
 </style>

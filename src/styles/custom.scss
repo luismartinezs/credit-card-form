@@ -1,3 +1,21 @@
 body {
   background-color: rgb(245, 245, 245);
 }
+
+form input {
+  background-color: inherit;
+  color: $grey-900;
+  border-radius: 5px;
+  border-color: $grey-500;
+  border-width: 1px;
+  border-style: solid;
+  transition: all 0.5s;
+  &:focus,
+  &:hover {
+    border-color: $primary-600;
+    outline: none;
+  }
+  &:focus {
+    box-shadow: 3px 10px 20px 0 hsla(0, 0%, 0%, 0.1);
+  }
+}
