@@ -4,6 +4,11 @@ Tasks:
 
 - [ ] Define colors
 - [x] Define margin and padding classes
-- [ ] Define width and height classes
-- [ ] Define shadow class presets
+- [x] Define width and height classes
+- [x] Define shadow class presets
 - [ ] Define fonts
+- [ ] Do not show arrows in numeric inputs (custom validation with JS)
+- [ ] Add values to card
+- [ ] Put input values in store
+- [ ] Show actual values in card
+- [ ] Card flip animation
