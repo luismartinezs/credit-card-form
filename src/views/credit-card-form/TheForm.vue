@@ -1,19 +1,30 @@
 <template>
-  <form class="the-form mw-40 mt-3d2 mx-auto pt-12 pb-3d2 px-2 z-400 shadow-400">
+  <form class="the-form mw-40 mx-auto pt-12 pb-3d2 px-2 shadow-500">
+    <credit-card />
     <card-number-input />
     <card-holder-input />
+    <div class="d-flex">
+      <expiration-date-input class="mr-2" />
+      <ccv-input />
+    </div>
   </form>
 </template>
 
 <script>
 import CardNumberInput from './the-form/CardNumberInput.vue'
 import CardHolderInput from './the-form/CardHolderInput'
+import expirationDateInput from './the-form/ExpirationDateInput'
+import CcvInput from './the-form/CcvInput'
+import CreditCard from './CreditCard'
 
 export default {
   name: 'TheForm',
   components: {
     CardNumberInput,
-    CardHolderInput
+    CardHolderInput,
+    expirationDateInput,
+    CcvInput,
+    CreditCard
   }
 }
 </script>
@@ -23,7 +34,6 @@ export default {
 
 .the-form {
   position: relative;
-  bottom: calc(16px*10);
   background-color: $grey-100;
   color: $grey-700;
   text-align: left;

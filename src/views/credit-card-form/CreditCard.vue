@@ -9,10 +9,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$card-height: 270px;
+
 .card-item {
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(-#{$card-height} / 2);
   width: 420px;
-  height: 270px;
+  height: $card-height;
   border-radius: 20px;
   // Photo by Greg Jeanneau on Unsplash
   background: url(./credit-card/card-background.png);
