@@ -43,17 +43,6 @@ export default {
           'hsl(230, 58%, 47%)',
           'hsl(221, 95%, 23%)'
         ],
-        primaryBk: [
-          'hsl(199, 100%, 92%)',
-          'hsl(201, 100%, 85%)',
-          'hsl(201, 88%, 74%)',
-          'hsl(201, 80%, 63%)',
-          'hsl(203, 77%, 49%)',
-          'hsl(205, 66%, 48%)',
-          'hsl(208, 61%, 47%)',
-          'hsl(208, 59%, 38%)',
-          'hsl(207, 79%, 21%)'
-        ],
         grey: [
           'hsl(199, 10%, 95%)',
           'hsl(199, 28%, 92%)',
@@ -73,11 +62,10 @@ export default {
 
 <style lang="scss" scoped>
 .style-guide {
-  padding: 0 20px;
+  padding: 20px 20px 0 20px;
   text-align: left;
   h1 {
     margin-bottom: 1rem;
-    margin-top: 1.5rem;
   }
   h2 {
     margin-left: 0.5rem;
