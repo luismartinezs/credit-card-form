@@ -1,7 +1,7 @@
 <template>
-  <div class="style-guide">
-    <h1>Style guide</h1>
-    <h2>Test components</h2>
+  <div class="style-guide pt-2 px-2">
+    <h1 class="mb-3d2">Style guide</h1>
+    <h2 class="mb-1 ml-1">Test components</h2>
     <div>
       <base-button class="btn-light" />
       <base-button class="btn-dark" />
@@ -9,26 +9,34 @@
     <div>
       <base-alert />
     </div>
-    <h2>Color palette</h2>
-    <div>
-      <h3>Primary</h3>
-      <color-swatch
-        v-for="color in colors.primary"
-        :key="color"
-        :color="color"
-      />
+    <div class="color-palette mb-2">
+      <h2 class="mb-1 ml-1">Color palette</h2>
+      <div class="mb-1">
+        <h3 class="mb-3d4 ml-2">Primary</h3>
+        <color-swatch
+          v-for="color in colors.primary"
+          :key="color"
+          :color="color"
+        />
+      </div>
+      <div>
+        <h3 class="mb-3d4 ml-2">Grey</h3>
+        <color-swatch
+          v-for="color in colors.grey"
+          :key="color"
+          :color="color"
+        />
+      </div>
     </div>
-    <div>
-      <h3>Grey</h3>
-      <color-swatch v-for="color in colors.grey" :key="color" :color="color" />
-    </div>
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
+    <div class="headings">
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
 
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+    </div>
   </div>
 </template>
 
@@ -73,20 +81,6 @@ export default {
 
 <style lang="scss" scoped>
 .style-guide {
-  padding: 20px 20px 0 20px;
   text-align: left;
-  h1 {
-    margin-bottom: 1rem;
-  }
-  h2 {
-    margin-left: 0.5rem;
-    margin-top: 0.8rem;
-    margin-bottom: 0.5rem;
-  }
-  h3 {
-    margin-left: 1rem;
-    margin-top: 0.8rem;
-    margin-bottom: 0.5rem;
-  }
 }
 </style>

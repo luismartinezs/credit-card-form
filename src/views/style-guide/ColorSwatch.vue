@@ -1,5 +1,5 @@
 <template>
-  <div class="color-swatch" :style="{backgroundColor: color}"></div>
+  <div class="color-swatch mr-3d4" :style="{backgroundColor: color}"></div>
 </template>
 
 <script>
@@ -20,7 +20,6 @@ $size: 50px;
   border-radius: 10px;
   width: $size;
   height: $size;
-  margin: 6px;
   display: inline-block;
   box-shadow: inset 0 0 3px 2px hsla(0, 0%, 0%, 0.1);
 }

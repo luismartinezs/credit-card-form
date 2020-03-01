@@ -1,5 +1,4 @@
-// Hand made sizes for font
-// 12 14 16 18 20 24 30 36 48 60 72 (px)
+// Hand made sizes for fonts
 
 $sizes: (
   1: 12,
@@ -18,5 +17,115 @@ $sizes: (
 @each $index, $size in $sizes {
   .fs-#{$index} {
     font-size: #{$size}px;
+  }
+}
+
+// Generate each margin and padding (top, bottom, left, right)
+
+$spacings: (
+  0: 0,
+  1d4: 4,
+  1d2: 8,
+  3d4: 12,
+  1: 16,
+  3d2: 24,
+  2: 32,
+  3: 48,
+  4: 64,
+  6: 96,
+  8: 128,
+  12: 192,
+  16: 256,
+  24: 384,
+  32: 512,
+  40: 640,
+  48: 768
+);
+
+$sides: (
+  t: "top",
+  b: "bottom",
+  l: "left",
+  r: "right"
+);
+
+$dims: (
+  p: "padding",
+  m: "margin"
+);
+
+$axes: (
+  x: (
+    "left",
+    "right"
+  ),
+  y: (
+    "top",
+    "bottom"
+  )
+);
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@each $side-index, $side in $sides {
+  .m#{$side-index}-auto {
+    margin-#{$side}: auto;
+  }
+}
+
+@each $dim-index, $dim in $dims {
+  @each $spacing-index, $spacing in $spacings {
+    //  m- p-...
+    .#{$dim-index}-#{$spacing-index} {
+      #{$dim}: #{$spacing}px;
+    }
+    // mx- px-...
+    .#{$dim-index}x-#{$spacing-index} {
+      #{$dim}-right: #{$spacing}px;
+      #{$dim}-left: #{$spacing}px;
+    }
+    // my- py-...
+    .#{$dim-index}y-#{$spacing-index} {
+      #{$dim}-top: #{$spacing}px;
+      #{$dim}-bottom: #{$spacing}px;
+    }
+    @each $side-index, $side in $sides {
+      // mb- pt- ...
+      .#{$dim-index}#{$side-index}-#{$spacing-index} {
+        #{$dim}-#{$side}: #{$spacing}px;
+      }
+    }
+  }
+}
+
+// Generate width and height, and max versions
+
+$lengths: (
+  w: "width",
+  h: "height",
+  mw: "max-width",
+  mh: "max-height"
+);
+
+@each $length-index, $length in $lengths {
+  .#{$length-index}-100 {
+    #{$length}: 100%;
+  }
+  @each $spacing-index, $spacing in $spacings {
+    .#{$length-index}-#{$spacing-index} {
+      #{$length}: #{$spacing}px;
+    }
   }
 }
