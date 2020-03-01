@@ -1,10 +1,10 @@
 <template>
-  <label for="CCV">
-    <div class="fs-2 mb-1d4">CCV</div>
+  <label for="CVV">
+    <div class="fs-2 mb-1d4">CVV</div>
     <div>
       <input
         class="w-100 fs-3 p-1 mb-3d2"
-        id="CCV"
+        id="CVV"
         name="credit-card-form"
         type="number"
         maxlength="4"
@@ -16,6 +16,6 @@
 
 <script>
 export default {
-  name: 'CcvInput'
+  name: 'CvvInput'
 }
 </script>

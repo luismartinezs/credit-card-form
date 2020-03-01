@@ -141,6 +141,7 @@ export default {
   .year-container {
     position: relative;
     .down-caret {
+      color: $grey-900;
       position: absolute;
       top: 18px;
       right: 20px;
