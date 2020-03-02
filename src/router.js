@@ -25,7 +25,7 @@ const router = new Router({
       component: StyleGuide
     },
     {
-      path: '/cube',
+      path: '/3d',
       name: 'ThreeDim',
       component: ThreeDim
     }
