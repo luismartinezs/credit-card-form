@@ -11,7 +11,7 @@ Tasks:
 - [x] Add values to card
 - [x] Do not allow manual input in expiration date
 - [x] Card flip animation
-- [ ] Event bus takes care of flip events
+- [x] Event bus takes care of flip events
 - [ ] Put input values in store
 - [ ] Show actual values in card
 - [ ] Use different backgrounds just for fun every time app reloads

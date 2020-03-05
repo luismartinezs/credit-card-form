@@ -2,7 +2,7 @@ Clone this project https://codepen.io/JavaScriptJunkie/full/YzzNGeR
 
 <template>
   <div class="credit-card-form px-1 pt-12 w-100 h-100">
-    <debug :show="true" />
+    <debug :show="false" />
     <the-form />
   </div>
 </template>
