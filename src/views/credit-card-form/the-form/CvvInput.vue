@@ -3,6 +3,7 @@
     <div class="fs-2 mb-1d4">CVV</div>
     <div>
       <input
+        @keyup="handleUpdate"
         @focus="flipCard(true)"
         @blur="flipCard(false)"
         class="w-100 fs-3 p-1 mb-3d2"
@@ -32,6 +33,9 @@ export default {
   methods: {
     flipCard (status) {
       EventBus.$emit('flip-card', status)
+    },
+    handleUpdate () {
+      EventBus.$emit('update-cvv', this.cvv)
     }
   }
 }

@@ -4,7 +4,7 @@
   >
     <div class="card-magnetic-band w-100 h-3"></div>
     <div class="card-cvv-field fs-2 text-right h-3 mx-1">
-      <div class="my-3d4 mr-1">****</div>
+      <div class="my-3d4 mr-1">{{ cvv }}</div>
     </div>
     <div class="card-brand d-flex flex-row w-100">
       <img class="logo ml-auto mr-1" src="./credit-card-logos/visa.png" />
@@ -13,8 +13,26 @@
 </template>
 
 <script>
+import EventBus from '@/event-bus.js'
+
 export default {
-  name: 'CreditCardBack'
+  name: 'CreditCardBack',
+  data () {
+    return {
+      cvv: ''
+    }
+  },
+  methods: {
+    updateCvv (value) {
+      this.cvv = '*'.repeat(value.length)
+    }
+  },
+  mounted () {
+    EventBus.$on('update-cvv', this.updateCvv)
+  },
+  beforeDestroy () {
+    EventBus.$off('update-cvv', this.updateCvv)
+  }
 }
 </script>
 

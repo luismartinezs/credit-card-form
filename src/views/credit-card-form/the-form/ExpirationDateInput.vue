@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import EventBus from '@/event-bus.js'
+
 export default {
   name: 'ExpirationDateInput',
   data () {
@@ -98,7 +100,7 @@ export default {
       const currentYear = new Date().getFullYear()
       const years = []
       for (let i = currentYear; i <= currentYear + this.yearCount; i++) {
-        years.push(i)
+        years.push('' + i)
       }
       return years
     }
@@ -114,6 +116,7 @@ export default {
     },
     setMonth (event, month) {
       this.selectedMonth = month
+      EventBus.$emit('update-month', month)
     },
     onFocusYear () {
       this.showYearDropdown = true
@@ -125,6 +128,7 @@ export default {
     },
     setYear (event, year) {
       this.selectedYear = year
+      EventBus.$emit('update-year', year)
     }
   }
 }

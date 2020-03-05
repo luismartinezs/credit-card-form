@@ -13,8 +13,10 @@ Tasks:
 - [x] Card flip animation
 - [x] Event bus takes care of flip events
 - [ ] Put input values in store
-- [ ] Show actual values in card
+- [x] Show actual values in card
+- [ ] Show 1st and last 4 numbers in card hide rest
 - [ ] Use different backgrounds just for fun every time app reloads
 - [ ] Change card logo depending on card number in real time
 - [ ] Highlight different areas of the card depending on currently selected input
 - [ ] Clicking in different areas of the card brings focus to inputs
+- [ ] Changing values in card flip downward and disappear
