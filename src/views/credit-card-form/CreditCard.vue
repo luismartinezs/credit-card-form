@@ -5,13 +5,13 @@
   >
     <credit-card-front class="side front fs-10 w-100 h-100" />
     <credit-card-back class="side back fs-10 w-100 h-100" />
-
   </div>
 </template>
 
 <script>
 import CreditCardFront from './credit-card/CreditCardFront.vue'
 import CreditCardBack from './credit-card/CreditCardBack.vue'
+import EventBus from '@/event-bus'
 
 export default {
   name: 'CreditCard',
@@ -28,6 +28,12 @@ export default {
     flipCard (status) {
       this.isCardFlipped = status
     }
+  },
+  mounted () {
+    EventBus.$on('flip-card', this.flipCard)
+  },
+  beforeDestroy () {
+    EventBus.$off('flip-card', this.flipCard)
   }
 }
 </script>
@@ -67,5 +73,4 @@ $card-height: 270px;
     transform: rotateY(180deg);
   }
 }
-
 </style>
