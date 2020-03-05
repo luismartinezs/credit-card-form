@@ -1,56 +1,26 @@
 <template>
   <div
-    class="card noselect card-item mx-auto z-500 shadow-500"
-    @click="flipCard(true)"
+    class="card noselect mx-auto z-500 shadow-500"
+    :class="{ flipped: isCardFlipped }"
   >
-    <div
-      class="card__content-front -front d-flex flex-column p-3d2 w-100 h-100 justify-between"
-      :class="{ active: !isCardFlipped }"
-      v-show="!showBack"
-    >
-      <div class="card-brand d-flex flex-row justify-between w-100">
-        <img class="chip" src="./credit-card/chip.png" />
-        <img class="logo" src="./credit-card/visa.png" />
-      </div>
-      <div class="card-number fs-7 text-center">
-        1006 #### #### 8452
-      </div>
-      <div class="card-data d-flex flex-row justify-between w-100">
-        <div>
-          <div class="card-heading mb-1d4">Card Holder</div>
-          <div class="card-value">FULL NAME</div>
-        </div>
-        <div class="text-center">
-          <div class="card-heading mb-1d4">Expires</div>
-          <div class="card-value">MM/31</div>
-        </div>
-      </div>
-    </div>
+    <credit-card-front class="side front fs-10 w-100 h-100" />
+    <credit-card-back class="side back fs-10 w-100 h-100" />
 
-    <div
-      class="card__content-back -back d-flex flex-column w-100 h-100 pt-2 pb-2 justify-between"
-      v-show="showBack"
-      :class="{ active: isCardFlipped }"
-    >
-      <div class="card-magnetic-band w-100 h-3"></div>
-      <div class="card-cvv-field fs-2 text-right h-3 mx-1">
-        <div class="my-3d4 mr-1">****</div>
-      </div>
-      <div class="card-brand d-flex flex-row w-100">
-        <img class="logo ml-auto mr-1" src="./credit-card/visa.png" />
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-// import throttle from 'lodash/throttle'
+import CreditCardFront from './credit-card/CreditCardFront.vue'
+import CreditCardBack from './credit-card/CreditCardBack.vue'
 
 export default {
   name: 'CreditCard',
+  components: {
+    CreditCardFront,
+    CreditCardBack
+  },
   data () {
     return {
-      rotated: false,
       isCardFlipped: false
     }
   },
@@ -58,20 +28,6 @@ export default {
     flipCard (status) {
       this.isCardFlipped = status
     }
-    // rotateCard () {
-    //   console.log('clicked')
-    //   function rotate () {
-    //     console.log('rotating')
-
-    //     this.rotated = !this.rotated
-    //     console.log('this.rotated: ', this.rotated)
-    //     setTimeout(() => {
-    //       this.showBack = !this.showBack
-    //     }, 394)
-    //   }
-
-    //   throttle(rotate.bind(this), 1000)()
-    // }
   }
 }
 </script>
@@ -80,73 +36,36 @@ export default {
 @import "@/styles/variables.scss";
 $card-height: 270px;
 
-.card-item {
+.card {
   position: absolute;
+  perspective-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  transition: all 1s cubic-bezier(0.59, -0.01, 0.46, 1.29);
   left: 0;
   right: 0;
   top: calc(-#{$card-height} / 2);
-  width: 420px;
+  width: 430px;
   height: $card-height;
   border-radius: 20px;
   // Photo by Greg Jeanneau on Unsplash
-  background: url(./credit-card/card-background.png);
-  .card__content-back {
-    transform: rotate3d(0, 1, 0, 180deg);
-    .card-magnetic-band {
-      background-color: hsla(0, 0%, 0%, 0.9);
-    }
-    .card-cvv-field {
-      background-color: white;
-      color: $grey-900;
-      border-radius: 3px;
-    }
-    .card-brand .logo {
-      opacity: 0.7;
-    }
+
+  border-radius: 20px;
+  &.flipped {
+    transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
   }
-  .card-brand .logo {
-    width: 88px;
-    height: 100%;
-  }
-  .card__content-front {
+  .side {
     position: absolute;
-    .card-brand {
-      .chip {
-        width: 60px;
-        height: 100%;
-      }
-    }
-    .card-number {
-      color: white;
-    }
-    .card-data {
-      .card-heading {
-        color: white;
-        opacity: 0.7;
-        font-size: 14px;
-      }
-      .card-value {
-        color: white;
-        font-size: 18px;
-        font-weight: 500;
-      }
-    }
+    border-radius: 20px;
+    color: $grey-100;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: url(./credit-card/credit-card-backgrounds/01.png);
+    background-size: cover;
+  }
+  .back {
+    transform: rotateY(180deg);
   }
 }
 
-.card {
-  transform: perspective(1000px);
-  transition: all 1s cubic-bezier(0.38, 0.01, 0.42, 1.33);
-  .-front {
-    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
-    backface-visibility: hidden;
-  }
-  .-back {
-    transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
-    backface-visibility: hidden;
-  }
-}
-.rotated {
-  transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
-}
 </style>

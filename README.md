@@ -10,7 +10,8 @@ Tasks:
 - [x] Do not show arrows in numeric inputs (custom validation with JS)
 - [x] Add values to card
 - [x] Do not allow manual input in expiration date
-- [ ] Card flip animation
+- [x] Card flip animation
+- [ ] Event bus takes care of flip events
 - [ ] Put input values in store
 - [ ] Show actual values in card
 - [ ] Use different backgrounds just for fun every time app reloads

@@ -1,5 +1,5 @@
 <template>
-  <form class="the-form mw-40 mx-auto pt-12 pb-2 pb-3d2 px-2 shadow-500">
+  <form class="the-form mw-40 pt-12 pb-2 mx-auto px-2 shadow-500">
     <credit-card />
     <card-number-input />
     <card-holder-input />
