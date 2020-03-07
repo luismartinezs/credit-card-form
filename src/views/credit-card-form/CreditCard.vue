@@ -3,8 +3,14 @@
     class="card noselect mx-auto z-500 shadow-500"
     :class="{ flipped: isCardFlipped }"
   >
-    <credit-card-front class="side front fs-10 w-100 h-100" />
-    <credit-card-back class="side back fs-10 w-100 h-100" />
+    <credit-card-front
+      class="side front fs-10 w-100 h-100"
+      :style="{ backgroundImage: `url(${backgroundUrl})` }"
+    />
+    <credit-card-back
+      class="side back fs-10 w-100 h-100"
+      :style="{ backgroundImage: `url(${backgroundUrl})` }"
+    />
   </div>
 </template>
 
@@ -12,6 +18,10 @@
 import CreditCardFront from './credit-card/CreditCardFront.vue'
 import CreditCardBack from './credit-card/CreditCardBack.vue'
 import EventBus from '@/event-bus'
+import bg01 from './credit-card/credit-card-backgrounds/01.png'
+import bg02 from './credit-card/credit-card-backgrounds/02.png'
+import bg03 from './credit-card/credit-card-backgrounds/03.png'
+import bg04 from './credit-card/credit-card-backgrounds/04.png'
 
 export default {
   name: 'CreditCard',
@@ -21,7 +31,15 @@ export default {
   },
   data () {
     return {
-      isCardFlipped: false
+      isCardFlipped: false,
+      backgrounds: [bg01, bg02, bg03, bg04]
+    }
+  },
+  computed: {
+    backgroundUrl () {
+      return this.backgrounds[
+        Math.ceil(Math.random() * this.backgrounds.length)
+      ]
     }
   },
   methods: {
@@ -54,9 +72,6 @@ $card-height: 270px;
   width: 430px;
   height: $card-height;
   border-radius: 20px;
-  // Photo by Greg Jeanneau on Unsplash
-
-  border-radius: 20px;
   &.flipped {
     transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
   }
@@ -66,7 +81,6 @@ $card-height: 270px;
     color: $grey-100;
     font-weight: bold;
     letter-spacing: 2px;
-    background: url(./credit-card/credit-card-backgrounds/01.png);
     background-size: cover;
   }
   .back {
