@@ -3,8 +3,8 @@
     class="card__content-front -front d-flex flex-column p-3d2 w-100 h-100 justify-between"
   >
     <div class="card-brand d-flex flex-row justify-between w-100">
-      <img class="chip" src="./chip.png" />
-      <img class="logo" src="./credit-card-logos/visa.png" />
+      <img class="chip" :src="chip" />
+      <img class="logo" :src="logo" />
     </div>
     <div class="card-number fs-7 text-left">
       {{ cardNumber | hideCardNumber }}
@@ -26,6 +26,7 @@
 
 <script>
 import EventBus from '@/event-bus.js'
+import chip from './chip.png'
 
 export default {
   name: 'CreditCardFront',
@@ -34,7 +35,14 @@ export default {
       cardHolder: 'Full name',
       month: 'MM',
       year: 'YY',
-      cardNumber: '#### #### #### ####'
+      cardNumber: '#### #### #### ####',
+      chip
+    }
+  },
+  props: {
+    logo: {
+      type: String,
+      required: true
     }
   },
   methods: {

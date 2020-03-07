@@ -4,10 +4,12 @@
     :class="{ flipped: isCardFlipped }"
   >
     <credit-card-front
+      :logo="logos.visa"
       class="side front fs-10 w-100 h-100"
       :style="{ backgroundImage: `url(${backgroundUrl})` }"
     />
     <credit-card-back
+      :logo="logos.visa"
       class="side back fs-10 w-100 h-100"
       :style="{ backgroundImage: `url(${backgroundUrl})` }"
     />
@@ -22,6 +24,8 @@ import bg01 from './credit-card/credit-card-backgrounds/01.png'
 import bg02 from './credit-card/credit-card-backgrounds/02.png'
 import bg03 from './credit-card/credit-card-backgrounds/03.png'
 import bg04 from './credit-card/credit-card-backgrounds/04.png'
+import { getRandomArrayItem } from '@/utils'
+import visa from './credit-card/credit-card-logos/visa.png'
 
 export default {
   name: 'CreditCard',
@@ -32,14 +36,13 @@ export default {
   data () {
     return {
       isCardFlipped: false,
-      backgrounds: [bg01, bg02, bg03, bg04]
+      backgrounds: [bg01, bg02, bg03, bg04],
+      logos: { visa }
     }
   },
   computed: {
     backgroundUrl () {
-      return this.backgrounds[
-        Math.ceil(Math.random() * this.backgrounds.length)
-      ]
+      return getRandomArrayItem(this.backgrounds)
     }
   },
   methods: {

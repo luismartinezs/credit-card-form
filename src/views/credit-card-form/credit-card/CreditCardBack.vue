@@ -7,7 +7,7 @@
       <div class="my-3d4 mr-1">{{ cvv }}</div>
     </div>
     <div class="card-brand d-flex flex-row w-100">
-      <img class="logo ml-auto mr-1" src="./credit-card-logos/visa.png" />
+      <img class="logo ml-auto mr-1" :src="logo" />
     </div>
   </div>
 </template>
@@ -20,6 +20,12 @@ export default {
   data () {
     return {
       cvv: ''
+    }
+  },
+  props: {
+    logo: {
+      type: String,
+      required: true
     }
   },
   methods: {
