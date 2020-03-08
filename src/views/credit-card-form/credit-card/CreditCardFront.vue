@@ -27,6 +27,7 @@
 <script>
 import EventBus from '@/event-bus.js'
 import chip from './chip.png'
+import { parseCardNumber } from '@/utils'
 
 export default {
   name: 'CreditCardFront',
@@ -35,7 +36,7 @@ export default {
       cardHolder: 'Full name',
       month: 'MM',
       year: 'YY',
-      cardNumber: '#### #### #### ####',
+      cardNumber: '################',
       chip
     }
   },
@@ -61,7 +62,16 @@ export default {
   },
   filters: {
     hideCardNumber (cardNumber) {
-      return cardNumber.replace(/\d/g, d => '#')
+      const parsedNumber = parseCardNumber(cardNumber)
+      return (
+        parsedNumber.slice(0, 4) +
+        ' ' +
+        parsedNumber.slice(4, 8) +
+        ' ' +
+        parsedNumber.slice(8, 12) +
+        ' ' +
+        parsedNumber.slice(12)
+      )
     },
     parseYear (fullYear) {
       return fullYear.slice(-2)
